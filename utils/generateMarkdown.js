@@ -11,25 +11,22 @@ function renderLicenseBadge(license) {
 
 function renderLicenseLink(license) {
   if (license !== "None"){
-    return `\n*[License](#license)\n`;
+    return `* [License](#license)`;
   }
   return '';
 }
 
 
 function renderLicenseSection(license) {
-  const licenseSection = `
-    ##License
-
-    This project is licensed by the ${license} license.
-  `;
+  const licenseSection = `## License
+  
+This project is licensed by the ${license} license.`;
   return licenseSection;
 }
 
 
 function generateMarkdown(data) {
-  return 
-  `# ${data.projName}
+  return `# ${data.projname}
 ${renderLicenseBadge(data.license)}
 
 ## Description
@@ -43,7 +40,7 @@ ${data.description}
 * [Credits](#credits)
 ${renderLicenseLink(data.license)}
 * [Features](#features)
-* [How to Contribute](#how-to-contribute)
+* [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
 
@@ -65,9 +62,9 @@ ${renderLicenseSection(data.license)}
 
 ${data.features}
 
-## How to Contribute
+## Contributing
 
-${data.howToContribute}
+${data.contributing}
 
 ## Tests
 
